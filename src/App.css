@@ -1,3 +1,11 @@
+body {
+  background-color: #141414;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,51 +13,302 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #ffffff);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #ff0000);
-}
-
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #000000;
-}
-
-
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
+
 
 h1 {
-  font-family: Arial, sans-serif;
-  color: #000000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e50914;
+  margin-bottom: 1rem;
 }
+
 
 .ant-btn-primary {
-  background: linear-gradient(135deg, #3498db, #e74c3c, #f1c40f) !important; 
+  background-color: #e50914 !important;
+  border: none !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.ant-btn-primary:hover {
+  background-color: #b20710 !important;
+  color: white !important;
+}
+
+.ant-btn-default {
+  background-color: #2c2c2c !important;
+  border: 1px solid #555 !important;
+  color: white !important;
+}
+
+.ant-btn-default:hover {
+  background-color: #b20710 !important;
+  color: white !important;
+}
+
+
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.header {
+  width: 100vw;
+  background-color: #141414;
+  border-bottom: 2px solid #e50914;
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-blog {
+  height: 60px;
+}
+
+.header-controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-controls .ant-input,
+.header-controls .ant-select {
+  background-color: #1f1f1f !important;
+  border: 1px solid #444 !important;
+  color: white !important;
+}
+.blog-intro {
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 32px auto 16px;
+  padding: 0 24px;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.blog-intro strong {
+  color: #e50914;
+}
+
+
+
+.ant-card {
+  background-color: #1e1e1e !important;
   border: none !important;
   color: #fff !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
 }
-.ant-btn-primary:hover {
-  transform: scale(1.05) !important; 
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2) !important;
-  background: #000000 !important; 
+.ant-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+.article-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.4;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 
 
+.article-card .ant-card-head-title {
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+
+.ant-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.ant-input, .ant-select-selector, textarea {
+  background-color: #2c2c2c !important;
+  color: white !important;
+  border: 1px solid #555 !important;
+}
+.ant-input::placeholder, textarea::placeholder {
+  color: #aaa !important;
+}
+.ant-select-dropdown {
+  background-color: #2c2c2c !important;
+  color: white !important;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+.netflix-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141414;
+  padding: 1rem 2rem;
+  width: 100%;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.netflix-header .logo-blog {
+  height: 50px;
+}
+
+.netflix-header .center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.netflix-header .right {
+  display: flex;
+  align-items: center;
+}
+
+.article-modal .ant-modal-content {
+  background-color: #1f1f1f;
+  color: white;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.article-modal .ant-modal-header {
+  background-color: #1f1f1f;
+  border-bottom: 1px solid #333;
+  border-radius: 12px 12px 0 0;
+}
+
+.article-modal .ant-modal-title {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.article-modal .ant-modal-footer {
+  background-color: #1f1f1f;
+  border-top: none;
+}
+
+.article-modal .ant-input,
+.article-modal .ant-select,
+.article-modal .ant-input-textarea {
+  background-color: #141414 !important;
+  color: white !important;
+  border: 1px solid #444 !important;
+}
+
+.article-modal .ant-form-item-label > label {
+  color: white !important;
+}
+
+.article-modal .ant-input::placeholder,
+.article-modal .ant-select-selection-placeholder {
+  color: #aaa !important;
+}
+
+.save-button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+.save-button:hover {
+  background-color: #b20710 !important;
+}
+
+.cancel-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #555;
+}
+.cancel-button:hover {
+  background-color: #333 !important;
+}
+
+.ant-select-selector {
+  background-color: transparent !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+
+.ant-select-selection-placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.ant-select-dropdown {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+.ant-select-item-option-content {
+  color: white !important;
+}
+
+.ant-select-arrow {
+  color: white !important;
+}
+
+.ant-select-clear {
+  color: white !important;
+  opacity: 0.8;
+}
+
+.ant-select-clear:hover {
+  color: #e50914 !important;
+  opacity: 1;
+}
+
+.article-modal .ant-modal-close {
+  color: white !important;
+  opacity: 0.9;
+}
+
+.article-modal .ant-modal-close:hover {
+  color: #e50914 !important;
+  opacity: 1;
+}

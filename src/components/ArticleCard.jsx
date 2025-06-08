@@ -1,14 +1,17 @@
-import React from "react";
-import { Card, Button } from "antd";
+import React, { useState } from "react";
+import { Card, Button, Tag } from "antd";
 import { deleteDoc, doc } from "firebase/firestore";
-import db from "../Fire";
+import { db } from "../Fire";
+import CommentSection from "./CommentSection";
+import EditArticleModal from "./EditArticleModal";
 
+const ArticleCard = ({ article, onDelete, onArticleUpdated }) => {
+  const [isEditVisible, setIsEditVisible] = useState(false);
 
-const ArticleCard = ({ article, onDelete }) => {
   const handleDelete = async () => {
     try {
       await deleteDoc(doc(db, "articles", article.id));
-      onDelete(article.id); // pour mettre à jour la liste dans App.jsx
+      onDelete(article.id);
     } catch (error) {
       console.error("Erreur lors de la suppression :", error);
       alert("Une erreur est survenue lors de la suppression.");
@@ -16,18 +19,55 @@ const ArticleCard = ({ article, onDelete }) => {
   };
 
   return (
-    <Card
-      title={article.title}
-      style={{ marginBottom: 16 }}
-      extra={
-        <Button danger onClick={handleDelete}>
-          Supprimer
-        </Button>
-      }
-    >
-      <p>{article.content}</p>
-      <p><strong>Date :</strong> {article.created_at?.toDate().toLocaleString()}</p>
-    </Card>
+    <>
+<Card
+  className="article-card"
+  title={null} 
+  extra={null} 
+  style={{ marginBottom: 16 }}
+>
+  <div className="card-header">
+    <div className="article-title">{article.title}</div>
+    <div className="article-actions">
+      <Button onClick={() => setIsEditVisible(true)}>Modifier</Button>
+      <Button danger onClick={handleDelete}>Supprimer</Button>
+    </div>
+  </div>
+
+
+        {article.genre && (
+          <Tag color="blue" style={{ marginBottom: 8 }}>
+            {article.genre}
+          </Tag>
+        )}
+
+        {article.imageUrl && (
+          <img
+            src={article.imageUrl}
+            alt="illustration"
+          />
+        )}
+
+
+        <p>{article.content}</p>
+        <p>
+          <strong>Date :</strong>{" "}
+          {article.created_at?.toDate().toLocaleString()}
+        </p>
+
+        <CommentSection articleId={article.id} />
+      </Card>
+
+      <EditArticleModal
+        visible={isEditVisible}
+        onClose={() => setIsEditVisible(false)}
+        article={article}
+        onArticleUpdated={() => {
+          setIsEditVisible(false);
+          onArticleUpdated();
+        }}
+      />
+    </>
   );
 };
 
