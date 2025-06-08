@@ -28,7 +28,7 @@ const EditArticleModal = ({ visible, onClose, article, onArticleUpdated }) => {
         imageUrl,
         genre,
       });
-      onArticleUpdated(); 
+      onArticleUpdated();
     } catch (error) {
       console.error("Erreur lors de la mise à jour :", error);
       alert("Une erreur est survenue.");

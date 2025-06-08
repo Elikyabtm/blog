@@ -105,6 +105,7 @@ h1 {
   border: 1px solid #444 !important;
   color: white !important;
 }
+
 .blog-intro {
   background-color: transparent;
   color: white;
@@ -129,6 +130,7 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }
+
 .ant-card:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
@@ -163,14 +165,19 @@ h1 {
   border-radius: 6px;
 }
 
-.ant-input, .ant-select-selector, textarea {
+.ant-input,
+.ant-select-selector,
+textarea {
   background-color: #2c2c2c !important;
   color: white !important;
   border: 1px solid #555 !important;
 }
-.ant-input::placeholder, textarea::placeholder {
+
+.ant-input::placeholder,
+textarea::placeholder {
   color: #aaa !important;
 }
+
 .ant-select-dropdown {
   background-color: #2c2c2c !important;
   color: white !important;
@@ -181,6 +188,7 @@ h2 {
   font-size: 1.8rem;
   margin-top: 2rem;
 }
+
 .netflix-header {
   display: flex;
   justify-content: space-between;
@@ -241,7 +249,7 @@ h2 {
   border: 1px solid #444 !important;
 }
 
-.article-modal .ant-form-item-label > label {
+.article-modal .ant-form-item-label>label {
   color: white !important;
 }
 
@@ -256,6 +264,7 @@ h2 {
   border: none;
   font-weight: bold;
 }
+
 .save-button:hover {
   background-color: #b20710 !important;
 }
@@ -265,6 +274,7 @@ h2 {
   color: white;
   border: 1px solid #555;
 }
+
 .cancel-button:hover {
   background-color: #333 !important;
 }

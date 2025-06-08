@@ -44,10 +44,10 @@ const ArticleModal = ({ isVisible, onClose, onArticleAdded }) => {
       setImageUrl("");
 
       if (onArticleAdded) {
-        onArticleAdded(); 
+        onArticleAdded();
       }
 
-      onClose(); 
+      onClose();
     } catch (error) {
       console.error("Erreur lors de l'ajout de l'article :", error);
       alert("Une erreur est survenue.");
@@ -55,27 +55,27 @@ const ArticleModal = ({ isVisible, onClose, onArticleAdded }) => {
   };
 
   return (
-<Modal
-  title="Rédige ton article"
-  open={isVisible}
-  onCancel={onClose}
-  className="article-modal"  
-  footer={[
-    <Button key="back" onClick={onClose} className="cancel-button">
-      Annuler
-    </Button>,
-    <Button key="submit" onClick={handleSubmit} className="save-button">
-      Valider
-    </Button>,
-  ]}
->
+    <Modal
+      title="Rédige ton article"
+      open={isVisible}
+      onCancel={onClose}
+      className="article-modal"
+      footer={[
+        <Button key="back" onClick={onClose} className="cancel-button">
+          Annuler
+        </Button>,
+        <Button key="submit" onClick={handleSubmit} className="save-button">
+          Valider
+        </Button>,
+      ]}
+    >
 
-<ArticleForm
-  title={title}
-  content={content}
-  genre={genre}
-  handleChange={handleChange}
-/>
+      <ArticleForm
+        title={title}
+        content={content}
+        genre={genre}
+        handleChange={handleChange}
+      />
 
     </Modal>
   );

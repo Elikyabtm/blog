@@ -9,7 +9,7 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { Input, Button, List, Card } from "antd";
-import { db, storage } from "../Fire"; 
+import { db, storage } from "../Fire";
 const CommentSection = ({ articleId }) => {
   const [comments, setComments] = useState([]);
   const [author, setAuthor] = useState("");
@@ -19,7 +19,7 @@ const CommentSection = ({ articleId }) => {
   const [editAuthor, setEditAuthor] = useState("");
   const [editContent, setEditContent] = useState("");
 
-  
+
   const fetchComments = async () => {
     const commentsRef = collection(db, "articles", articleId, "comments");
     const snapshot = await getDocs(commentsRef);

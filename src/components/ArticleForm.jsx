@@ -9,22 +9,22 @@ const ArticleForm = ({ title, content, imageUrl, genre, handleChange }) => {
     <Form layout="vertical">
 
       <Form.Item label="Titre de l'article" name="title">
-        <Input 
+        <Input
           name="title"
-          value={title} 
-          onChange={handleChange} 
-          placeholder="Entrez le titre de l'article" 
+          value={title}
+          onChange={handleChange}
+          placeholder="Entrez le titre de l'article"
         />
       </Form.Item>
 
 
       <Form.Item label="Contenu de l'article" name="content">
-        <TextArea 
+        <TextArea
           name="content"
-          value={content} 
-          onChange={handleChange} 
-          placeholder="Entrez le contenu de l'article" 
-          rows={4} 
+          value={content}
+          onChange={handleChange}
+          placeholder="Entrez le contenu de l'article"
+          rows={4}
         />
       </Form.Item>
 

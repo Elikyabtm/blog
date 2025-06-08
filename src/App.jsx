@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/logo.png";
+import logo from '/logo.png'
 import AddButton from "./components/AddButton";
 import ArticleModal from "./components/ArticleModal";
 import ArticleCard from "./components/ArticleCard";
@@ -63,7 +63,7 @@ function App() {
      <header className="header">
   <div className="header-inner">
     <div className="header-left">
-      <a href="index.html"><img src="/src/assets/logo.png" alt="Logo" className="logo-blog" /></a>
+      <a href="index.html"><img src={logo} alt="Logo" className="logo-blog" /></a>
     </div>
 
     <div className="header-controls">

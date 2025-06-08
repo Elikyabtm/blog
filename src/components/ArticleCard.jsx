@@ -20,19 +20,19 @@ const ArticleCard = ({ article, onDelete, onArticleUpdated }) => {
 
   return (
     <>
-<Card
-  className="article-card"
-  title={null} 
-  extra={null} 
-  style={{ marginBottom: 16 }}
->
-  <div className="card-header">
-    <div className="article-title">{article.title}</div>
-    <div className="article-actions">
-      <Button onClick={() => setIsEditVisible(true)}>Modifier</Button>
-      <Button danger onClick={handleDelete}>Supprimer</Button>
-    </div>
-  </div>
+      <Card
+        className="article-card"
+        title={null}
+        extra={null}
+        style={{ marginBottom: 16 }}
+      >
+        <div className="card-header">
+          <div className="article-title">{article.title}</div>
+          <div className="article-actions">
+            <Button onClick={() => setIsEditVisible(true)}>Modifier</Button>
+            <Button danger onClick={handleDelete}>Supprimer</Button>
+          </div>
+        </div>
 
 
         {article.genre && (
