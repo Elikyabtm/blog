@@ -40,6 +40,7 @@ const EditArticleModal = ({ visible, onClose, article, onArticleUpdated }) => {
       title="Modifier l'article"
       open={visible}
       onCancel={onClose}
+       className="article-modal"
       footer={[
         <Button key="cancel" onClick={onClose}>Annuler</Button>,
         <Button key="update" type="primary" onClick={handleUpdate}>
